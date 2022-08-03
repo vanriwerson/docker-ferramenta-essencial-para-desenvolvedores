@@ -1,0 +1,17 @@
+Criar nova rede
+docker network create --driver bridge my_network
+
+Listar redes criadas
+docker network ls
+
+Obter informações da rede
+docker network inspect <name_or_hash>
+
+Criar container conectado à nova rede
+docker container run -d --name my_container --net my_network alpine
+
+Conectar container criado anteriormente à rede padrão (bridge)
+docker network connect bridge my_container
+
+Desconectar container de uma rede
+docker network disconnect bridge my_container
